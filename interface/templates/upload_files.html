@@ -1,0 +1,45 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="{% static 'forms.css' %}">
+       
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+        <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+        
+        <ul>
+            <li><img src="{% static 'images/logo.png' %}" alt="logo" style="width:10%" ></li>
+            <li><a href="/interface/dashboard">Back</a></li> 
+           
+          
+            
+            
+              
+             
+        </ul>
+
+       <p>  </p>
+       
+    </head>
+    <body>
+  
+        <div class ="Fcard">
+               <form   method="POST" enctype="multipart/form-data"  >
+                    {% csrf_token %}
+                
+                
+                    <p>{{form.file}}</p>
+                
+                    <input type ="submit" value="Upload">
+                </form>
+        </div>
+
+    
+
+    </body>
+
+</html>

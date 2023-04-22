@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  
+    <head>
+      <style>
+              body{
+        margin: 0;
+        padding: 0;
+      }
+       
+
+  .r{
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+  }
+
+      </style>
+        <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+       
+        <ul style="width:100%">
+            <li><img src="{% static 'images/logo.png' %}" alt="logo" style="width:10%" ></li>
+            <li><a class="active" href="/interface/dashboard">Dashboard</a></li>
+            <li><a class="active" href="/new/">FileData</a></li>
+            <li><a class="active" href="/interface/up/"> Upload</a></li> 
+            <li class="go" ><a href="/interface/about" > Logout</a></li> 
+            <li class="go"><a > {{user}}</a></li> 
+           
+        </ul>
+       
+          
+            
+    </head>
+    <body >
+
+<br>
+<br>
+
+
+      <div class="container">
+        <div class="c">
+          
+          <center><img src="{{File.Networkmap.url}} "  ></center>
+        </div>
+        
+        <div class="d">
+          <div class="vl">
+            <div class="card2">
+              <center><h2 > VULNERABILITIES</h2></center>
+            
+              {{port}}</br>
+
+              {{ddos}}</br>
+              <center><h2>SUSPIOUS IP ADDRESS</h2></center>
+              {{susips}}</br>
+            
+     
+              <center><h2 >NETWORK PROTOCALS</h2></center>
+           
+              {{protocal1}}</br>
+              {{protocal2}}</br>
+              {{protocal3}}</br>
+              {{protocal4}}</br>
+              {{protocal5}}</br>
+              
+              <center><h2 >MOST ACTIVE IP ADDRESS ON NETWORK</h2></center>
+              {{MOS}}</br> 
+        
+                   
+                    
+                    
+                    
+         
+             
+             
+             
+          
+              
+      
+            
+           
+          </div>
+          </div>
+          
+        </div>
+      </div>
+     
+        </body>
+</html>

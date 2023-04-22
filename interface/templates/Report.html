@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'forms.css' %}">
+       
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+        <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+        
+
+        <ul style="width:100%"  >
+            <li><img src="{% static 'images/logo.png' %}" alt="logo" style="width:10%" ></li>
+            <li><a class="active" href="/ad">Home</a></li>  
+            <li><a class="active" href="/interface/Reports">Report</a></li>
+            <li><a class="active" href="/adadminsignup/"> Add user</a></li>
+            <li><a class="active" href="/delete">Delete User</a></li> 
+            <li class="go" ><a href="/interface/about" > Logout</a></li> 
+            
+        </ul>
+        
+            
+          
+
+       
+    </head>
+    
+    <body>
+        <div class ="Fcard">
+
+            <form method="POST" action="">
+                {% csrf_token %}
+            
+                <label>Select your report type</label></br>
+                 <select name="Reports" id="report">
+                    <option value="User_report">User Report</option>
+                    <option value="Network_report">Network Report</option>
+               
+                  </select>
+               
+                <input  type="submit" value="generate"></br>
+               
+                
+            </form>
+        </div>
+
+    </body>
+</html>

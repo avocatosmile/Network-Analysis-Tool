@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        #users {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        #users td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        
+        #users tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #users tr:hover {background-color: #ddd;}
+        
+        #users th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #333;
+          color: white;
+        }
+        button{
+          width: 100%;
+          background-color: #333;
+          color: white;
+          padding: 7px 9px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        ul {
+          list-style-type: none;
+          margin: 0;
+         
+          overflow: hidden;
+          top: 0;
+          width: 100%;
+          background-color: #333;
+        
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover {
+          background-color: #111;
+        }
+        
+        </style>
+        
+  
+
+  <body>
+  
+
+   <table id="users">
+    <tr>
+      <th> filename </th>
+  
+      <th> DDOS</th>
+      
+      <th> SSL</th>
+      <th> portflooding</th>
+      <th> TCP</th>
+      <th> UDP</th>
+    
+  
+    </tr>
+     
+      {% for i in data %}
+     
+      <tr>
+        
+       
+         <td>{{ i.File}}</td>
+        
+         <td >{{ i.DDos}}</td>
+         <td >{{ i.ssl}}</td>
+         <td >{{ i.portflooding}}</td>
+         <td >{{ i.tcp}}</td>
+         <td >{{ i.udp}}</td>
+        
+         
+    </tr>
+      {% endfor %}
+    </table>
+ </body>
+</html>

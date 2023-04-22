@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        #users {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        #users td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        
+        #users tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #users tr:hover {background-color: #ddd;}
+        
+        #users th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #333;
+          color: white;
+        }
+        button{
+          width: 100%;
+          background-color: #333;
+          color: white;
+          padding: 7px 9px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        ul {
+          list-style-type: none;
+          margin: 0;
+         
+          overflow: hidden;
+          top: 0;
+          width: 100%;
+          background-color: #333;
+        
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover {
+          background-color: #111;
+        }
+        
+        </style>
+        
+  <script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+        text: "Top  most active Users "
+      },
+      data: [
+     
+      {
+        dataPoints: [
+        { x: 1, y: 15, label: "arnold"},
+        { x: 2, y: 20,  label: "test" },
+        { x: 3, y: 5,  label: "chk"},
+        { x: 4, y: 4,  label: "sean"},
+        { x: 5, y: 9,  label: "another"},
+        { x: 6, y: 5,  label: "maina"}
+        ]
+      }
+      ]
+    });
+
+    chart.render();
+  }
+  </script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
+  <body>
+   <div id="chartContainer" style="height: 300px; width: 100%;">
+   </div>
+
+   <table id="users">
+    <tr>
+      <th> ID </th>
+      <th> UserName</th>
+      <th> LastLogin</th>
+      <th> DateJoined</th>
+    
+  
+    </tr>
+     
+      {% for i in users %}
+     
+      <tr>
+        <td>{{ i.id}}</td>
+       
+         <td>{{ i.username}}</td>
+         <td>{{ i.last_login}}</td>
+         <td >{{ i.date_joined}}</td>
+        
+         
+    </tr>
+      {% endfor %}
+    </table>
+ </body>
+</html>

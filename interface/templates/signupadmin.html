@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'forms.css' %}">
+       
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+       
+          
+
+       
+    </head>
+    <body>
+    <div class ="Fcard">
+     <form method="POST" action="">
+        {% csrf_token %}
+        {%for field in form%}
+            {{field.label}}    
+            {{field}}
+            </br>
+        {%endfor%}
+        <p>
+            1.Your password cant be too similar to your personal information</br>
+            2.your password must contain atleast 8 character</br>
+            3.your password  cant be a commonly used password</br>
+            4.your password  cant be  entirely numeric</br>
+
+        </p>
+        <input type="submit" value="Create User">
+        {% for message in messages%}
+        <p id"messages">{{message}}</p>
+    {%endfor%} 
+     </form>
+    </div>
+
+    </body>
+
+</html>
+

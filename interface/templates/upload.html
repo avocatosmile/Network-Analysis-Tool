@@ -1,0 +1,38 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="{% static 'forms.css' %}">
+       
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+      
+        
+
+       
+    </head>
+    <body>
+  
+        <div class ="Fcard">
+
+            <form method="POST" >
+                {% csrf_token %}
+            
+                <label>Select your pcap file</label></br>
+                <input type="file" name="file" ></br>
+                
+               
+                <input  type="submit" value="upload"></br>
+               
+                
+            </form>
+        </div>
+   
+    
+
+    </body>
+
+</html>

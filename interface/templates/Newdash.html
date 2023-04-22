@@ -1,0 +1,294 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <style>
+    body{
+       
+        padding: 0;
+        margin:0;
+      }
+    #users {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #users td, #customers th {
+      
+      padding: 8px;
+    }
+    
+    #users tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #users tr:hover {background-color: #ddd;}
+    
+    #users th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #333;
+      color: white;
+    }
+    button{
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 7px 9px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+     
+      overflow: hidden;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+    
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      color: white;
+      
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover {
+      background-color: #111;
+    }
+    .sets {
+  display: grid; 
+  background-color: white;
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "-set1 k set2-"
+    "-set1 k set2-"
+    ". . ."; 
+}
+.-set1 { grid-area: -set1; }
+.set2- { grid-area: set2-; }
+.k { 
+  grid-area: k; 
+  background-color: #f1f1f1;
+}
+
+    
+    </style>
+ 
+  
+
+    
+
+
+
+</head>
+
+<body>
+
+  <ul style="width:100%">
+    <li><img src="{% static 'images/logo.png' %}" alt="logo" style="width:10%" ></li>
+    <li><a class="active" href="/display/">Dashboard</a></li>
+    <li><a class="active" href="/new/">FileData</a></li>
+    <li><a class="active" href="/interface/up/"> Upload</a></li> 
+    <li class="go" ><a href="/interface/about" > Logout</a></li> 
+    <li class="go"><a > {{user}}</a></li> 
+   
+</ul>
+  
+  <center>
+   
+      <div class="sets">
+        <div class="-set1">
+          <h1>TCP/IP PACKETS</h1>
+          <table >
+            <tr>
+            
+              <th>Source</th>
+              <th>Destination</th>
+              <th>Souce Mac</th>
+              <th>Destination Mac</th>
+            </tr>     
+           <tr>
+           
+             <td>
+               <table id="users">
+                 
+                 
+                   {% for i in source %}
+                   
+                 
+                     <tr>
+                       <td>{{i}}</td>
+                      
+                   
+                     </tr>
+               
+                   {% endfor %}
+                
+                
+                 </table>
+               </td>
+                 <td>
+                 <table id="users">
+               
+                   {% for x in dest %}
+                   
+                 
+                     <tr>
+                       <td>{{x}}</td>
+                     
+                   
+                     </tr>
+               
+                   {% endfor %}
+                
+                
+                 </table>
+               </td>
+               <td>
+                 <table id="users">
+               
+                   {% for x in sourcemac %}
+                   
+                 
+                     <tr>
+                       <td>{{x}}</td>
+                     
+                   
+                     </tr>
+               
+                   {% endfor %}
+                
+                
+                 </table>
+               </td>
+               <td>
+                 <table id="users">
+               
+                   {% for x in destmac %}
+                   
+                 
+                     <tr>
+                       <td>{{x}}</td>
+                     
+                   
+                     </tr>
+               
+                   {% endfor %}
+                
+                
+                 </table>
+               </td>
+     
+     
+               </tr>
+               </table>
+        </div>
+        <div class="set2-">
+          <div class="-set1">
+            <h1>ARP PACKETS</h1>
+            <table >
+              <tr>
+              
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Souce Mac</th>
+                <th>Destination Mac</th>
+              </tr>     
+             <tr>
+             
+               <td>
+                 <table id="users">
+                   
+                   
+                     {% for i in sourcearp %}
+                     
+                   
+                       <tr>
+                         <td>{{i}}</td>
+                        
+                     
+                       </tr>
+                 
+                     {% endfor %}
+                  
+                  
+                   </table>
+                 </td>
+                   <td>
+                   <table id="users">
+                 
+                     {% for x in destarp %}
+                     
+                   
+                       <tr>
+                         <td>{{x}}</td>
+                       
+                     
+                       </tr>
+                 
+                     {% endfor %}
+                  
+                  
+                   </table>
+                 </td>
+                 <td>
+                   <table id="users">
+                 
+                     {% for x in sourcemacarp %}
+                     
+                   
+                       <tr>
+                         <td>{{x}}</td>
+                       
+                     
+                       </tr>
+                 
+                     {% endfor %}
+                  
+                  
+                   </table>
+                 </td>
+                 <td>
+                   <table id="users">
+                 
+                     {% for x in destmacarp %}
+                     
+                   
+                       <tr>
+                         <td>{{x}}</td>
+                       
+                     
+                       </tr>
+                 
+                     {% endfor %}
+                  
+                  
+                   </table>
+                 </td>
+       
+       
+                 </tr>
+                 </table>
+          </div>
+        </div>
+        <div class="k"></div>
+      </div>
+</body>
+</html>

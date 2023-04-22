@@ -1,0 +1,36 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="stylesheet" href="{% static 'forms.css' %}">
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+        <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+</head>
+
+    <body>
+  
+      <div class ="Fcard">
+
+        <form method="POST" action="">
+            {% csrf_token %}
+           
+            <label>Username </label>
+            <input type="text" name="username" placeholder="Username" ></br>
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Password..." ></br>
+            <input  type="submit" value="Login"></br>
+            do you have an account ? <a class="active" href="/signup/">Signup</a>
+            {% for message in messages%}
+                <p id"messages" style="color: red;">{{message}}</p>
+            {%endfor%} 
+        </form>
+   
+       
+
+    </body>
+    
+       
+   
+
+</html>
